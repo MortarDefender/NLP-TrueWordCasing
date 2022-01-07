@@ -1,0 +1,5 @@
+{
+  "input_filename":  "./assets/data.askscience.test.txt",
+  "output_filename": "./assets/data.askscience.test.true-cased.txt",
+  "corpus": "./assets/en.wikipedia2018.10M.txt"
+}

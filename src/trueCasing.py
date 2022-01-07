@@ -27,6 +27,7 @@ class TrueCasing():
         """ read the file and create the dictionary and words list """
         
         if not os.path.isfile(self.__data_corpus):
+            print("no data corpus")
             # Takes VERY LONG TIME to complete, if the .pkl is not in the folder please contact the author to get a replacement        
             base_line_file_name = "corpus_"
             for i in range(1, self.max_words_context + 1):
@@ -176,10 +177,3 @@ def true_case(input_filename, output_filename, corpus_filename):
     
     print('starting true-casing', input_filename, 'into', output_filename, 'using', corpus_filename)
     TrueCasing(corpus_filename, output_filename).parse(open(input_filename, 'r', encoding="utf-8").read(), True)
-
-
-if __name__ == '__main__':
-    with open('config.json', 'r') as json_file:
-        config = json.load(json_file)
-
-    true_case(config['input_filename'], config['output_filename'], config['corpus'])
